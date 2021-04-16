@@ -11,7 +11,7 @@ Misc - opacity
 */
 
 .container {
-    max-width: 120rem; // 1200px - if screen smaller than 1200px will occupy 100%
+    max-width: 120rem;  // 1200px - if screen smaller than 1200px will occupy 100%
     min-height: 50rem;
     
     margin: 8rem auto;
@@ -23,6 +23,12 @@ Misc - opacity
 .header {
     height: 7rem;
 
+    display: flex;
+    justify-content: space-between; // justify-content - Align horizontally - Divide space between elements
+    align-items: center;    // align-items - Align vertically
+
+    font-size: 1.4rem;    // Override default font-size of 1rem (10px) for header
+
     border-bottom: var(--color-grey-light-2); // TODO - examine what this does
     
     background-color: #fff;
@@ -33,13 +39,11 @@ Misc - opacity
 }
 
 .sidebar {
-    flex: 0 0 18%; // Shorthand for flex property - flex-grow (0), flex-shrink (0), flex-basis (18%)
-
+    flex: 0 0 18%;  // Shorthand for flex property - flex-grow (0), flex-shrink (0), flex-basis (18%)
     background-color: var(--color-grey-dark-1);
 }
 
 .hotel-view {
     flex: 1;
-
     background-color: orangered;
 }
