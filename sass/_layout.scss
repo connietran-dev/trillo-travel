@@ -1,0 +1,45 @@
+/* 
+
+CSS declarations are grouped in the following order:
+
+Positioning - position, top, left
+Box-model - display, width, height
+Typography - font, text-align
+Visual - background-color, border
+Misc - opacity
+
+*/
+
+.container {
+    max-width: 120rem; // 1200px - if screen smaller than 1200px will occupy 100%
+    min-height: 50rem;
+    
+    margin: 8rem auto;
+
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+}
+
+.header {
+    height: 7rem;
+
+    border-bottom: var(--color-grey-light-2); // TODO - examine what this does
+    
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+}
+
+.sidebar {
+    flex: 0 0 18%; // Shorthand for flex property - flex-grow (0), flex-shrink (0), flex-basis (18%)
+
+    background-color: var(--color-grey-dark-1);
+}
+
+.hotel-view {
+    flex: 1;
+
+    background-color: orangered;
+}
