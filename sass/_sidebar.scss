@@ -1,0 +1,103 @@
+// || SIDE NAVIGATION
+//--------------------------------------
+.side-nav {
+    margin-top: 3.5rem;
+
+    font-size: 1.4rem;
+    list-style: none;
+
+    &__item {
+        position: relative;
+
+        // Everything but last-child
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    // Create pink pseudoelement for below hovering over menu item
+    &__item::before {
+        content: "";    // Need to set for ::before pseudoelement to display in browser
+        background-color: var(--color-primary);
+
+        // Set to be right over link item with same height
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        
+        transform: scaleY(0);   // When not hovered, do not display
+
+        transform-origin: center;   // Default transform starts from center (Don't need to declare - but stated for educational purposes)
+        width: 3px;     // Needs small value so scaleY is obvious
+        
+        // Transitions can be put on different CSS properties
+
+        // Can create staged / sequence of animations w/ scaleY then delay of width
+        // Delay transform: scaleY for .2s
+        // Delay width by same .2s
+        // Then transform width for .4s with cubic-bezier
+        transition: transform .2s .1s,  // property | duration | delay
+                    width .4s cubic-bezier(1,0,0,1) .2s, // property | duration | easing func | delay
+                    background-color .1s;   // Animates background-color in .1s
+
+                    // cubic-bezier.com used to generate
+                    // cubic-bezier is actually the same as ease-in-out 
+    }
+
+    // Display the pseudoelement for __item--active to indicate you're on this tab
+    // which is the same as hovering over an item (__item:hover::before)
+    &__item--active::before, 
+    &__item:hover::before {
+        transform: scaleY(1);   // When pseudoelement is hovered, scale in Y direction, ie, display it
+        width: 100%;
+    }
+
+    // Create pseudoelement for when item is being clicked on (:active)
+    // So that __item becomes brighter primary color when clicked on
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+    // :link state of link is normal, unvisited link
+    // :visited state of link is visited at least once
+    &__link:link,
+    &__link:visited {
+        position: relative;     // z-index only works if you have specified position (I assume for links, it's not usually specified)
+        z-index: 10;    // Position link above pseudoelement
+        display: block;
+        padding: 1.5rem 3rem;
+        
+        color: var(--color-grey-light-1);
+        text-decoration: none;
+        text-transform: uppercase;
+        
+        display: flex;  // TODO - Figure out why you have to put this at bottom
+        align-items: center;    // Align nav icon and link
+    }
+
+    &__icon {
+        margin-right: 2rem;
+        
+        height: 1.75rem;    // Size svgs as squares
+        width: 1.75rem;
+
+        fill: currentColor; // currentColor is color of parent element, incl. hover of parent
+    }
+}
+
+
+// || LEGAL TEXT
+//--------------------------------------
+.legal {
+    padding: 2.5rem;
+
+    color: var(--color-grey-light-4);
+    font-size: 1.2rem;
+    text-align: center;
+
+    a {
+        color: var(--color-primary-dark);
+        text-decoration: none;
+    }
+}

@@ -23,9 +23,10 @@ Misc - opacity
 .header {
     height: 7rem;
 
+    /* Flexbox container for logo, search, user-nav */ 
     display: flex;
-    justify-content: space-between; // justify-content - Align horizontally - Divide space between elements
-    align-items: center;    // align-items - Align vertically
+    justify-content: space-between; // Align horizontally - Divide space between elements
+    align-items: center;    // Align vertically
 
     font-size: 1.4rem;    // Override default font-size of 1rem (10px) for header
 
@@ -39,11 +40,20 @@ Misc - opacity
 }
 
 .sidebar {
+    /* Flex with hotel-view */
     flex: 0 0 18%;  // Shorthand for flex property - flex-grow (0), flex-shrink (0), flex-basis (18%)
+    
+    /* Flexbox container for menu items */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     background-color: var(--color-grey-dark-1);
 }
 
 .hotel-view {
+    // FOR TESTING
     flex: 1;
-    background-color: orangered;
+    height: 80rem;
+    // background-color: orangered;
 }

@@ -64,7 +64,9 @@ Misc - opacity
   height: 3.25rem; }
 
 .search {
+  /* .search is child flex item from parent .header flex container */
   flex: 0 0 40%;
+  /* Then create flex container out of .search for .search's children */
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -102,6 +104,7 @@ Misc - opacity
     fill: var(--color-grey-dark-3); }
 
 .user-nav {
+  /* Flex for user-nav child items */
   display: flex;
   align-items: center;
   align-self: stretch; }
@@ -112,9 +115,9 @@ Misc - opacity
     height: 100%; }
   .user-nav > *:hover {
     background-color: var(--color-grey-light-2); }
-  .user-nav > a {
+  .user-nav a {
     text-decoration: none;
-    color: inherit; }
+    color: currentColor; }
   .user-nav__icon-box {
     position: relative;
     margin-top: 1rem; }
@@ -143,6 +146,55 @@ Misc - opacity
     height: 3.75rem;
     border-radius: 50%; }
 
+.side-nav {
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+  list-style: none; }
+  .side-nav__item {
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: .5rem; }
+  .side-nav__item::before {
+    content: "";
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: center;
+    width: 3px;
+    transition: transform 0.2s 0.1s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .side-nav__item--active::before, .side-nav__item:hover::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    position: relative;
+    z-index: 10;
+    display: block;
+    padding: 1.5rem 3rem;
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center; }
+  .side-nav__icon {
+    margin-right: 2rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: currentColor; }
+
+.legal {
+  padding: 2.5rem;
+  color: var(--color-grey-light-4);
+  font-size: 1.2rem;
+  text-align: center; }
+  .legal a {
+    color: var(--color-primary-dark);
+    text-decoration: none; }
+
 /* 
 
 CSS declarations are grouped in the following order:
@@ -163,6 +215,7 @@ Misc - opacity
 
 .header {
   height: 7rem;
+  /* Flexbox container for logo, search, user-nav */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -174,9 +227,14 @@ Misc - opacity
   display: flex; }
 
 .sidebar {
+  /* Flex with hotel-view */
   flex: 0 0 18%;
+  /* Flexbox container for menu items */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-grey-dark-1); }
 
 .hotel-view {
   flex: 1;
-  background-color: orangered; }
+  height: 80rem; }

@@ -19,14 +19,13 @@ Misc - opacity
 }
 
 
-
 // || SEARCH
 //--------------------------------------
 .search {
-    // .search is child flex item from parent .header flex container
+    /* .search is child flex item from parent .header flex container */
     flex: 0 0 40%; // TODO - Why not use width: 40%?
 
-    // Then create flex container out of .search for .search's children
+    /* Then create flex container out of .search for .search's children */
     display: flex;
     justify-content: center;    // Center horizontally
     align-items: center;    // Center vertically
@@ -97,6 +96,7 @@ Misc - opacity
 // || USER NAVIGATION
 //--------------------------------------
 .user-nav {
+    /* Flex for user-nav child items */
     display: flex;
     align-items: center;    // Align vertically
     align-self: stretch;    // Stretch from top to bottom of header
@@ -118,9 +118,9 @@ Misc - opacity
         background-color: var(--color-grey-light-2);    // Grey hover effect
     }
 
-    & > a {
+    a {
         text-decoration: none;
-        color: inherit;
+        color: currentColor;
     }
 
     &__icon-box {
