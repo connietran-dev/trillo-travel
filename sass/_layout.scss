@@ -30,7 +30,7 @@ Misc - opacity
 
     font-size: 1.4rem;    // Override default font-size of 1rem (10px) for header
 
-    border-bottom: var(--color-grey-light-2); // TODO - examine what this does
+    border-bottom: 1px solid var(--color-grey-light-2);
     
     background-color: #fff;
 }

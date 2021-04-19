@@ -16,9 +16,17 @@
 .overview {
     /* Flex container for top-level Hotel Overview items */
     display: flex;
+    align-items: center;    // Align vertically
+
+    border-bottom: 1px solid var(--color-grey-light-2);
 
     &__heading {
+        padding: 1.5rem 3rem;
 
+        font-size: 2.25rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     &__stars {
@@ -29,29 +37,114 @@
         // flex: 1;    
         margin-right: auto;     
         // background-color: yellow;   // Uncomment to test
+
+        // svg's behave like inline elements like text which produces small whitespace underneath
+        // So set their parent element to flexbox to get rid of whitespace
+        display: flex;
+
     }
 
     &__icon-star,
     &__icon-location {
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 2rem;
+        width: 2rem;
 
         fill: var(--color-primary);
     }
 
     &__location {
         // background-color: green;    // Uncomment to test
+        display: flex;
+
+        // TODO - Why not use align-items: center?
+        // TODO - You actually don't need either properties
+        // vertical-align sets inline or table-cell box
+        // align-items sets direct children as a group on cross axis of flexbox
+        // vertical-align: center;
+        // align-items: center;
+    
+        font-size: 1.2rem;
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
     }
 
     &__rating {
+        /* Stretch to .overview flexbox */
+        align-self: stretch;    
 
+        /* Flexbox for rating and votes child elements */
+        display: flex;  
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+
+        color: #fff;
+        background-color: var(--color-primary);
     }
 
     &__rating-average {
+        margin-bottom: -3px;    // Decrease space between elements for aesthetic
 
+        font-size: 2.25rem;
+        font-weight: 300;
     }
 
     &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
 
+
+// || BUTTON INLINE
+//--------------------------------------
+// This is a new component since we use this for location and "Show all" link
+
+.btn-inline {
+    display: inline-block; 
+    padding-bottom: 2px;
+
+    color: var(--color-primary);
+    font-size: inherit;     // We will be setting font-size on parent
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid currentColor;  // Border will have same color as text incl. on hover
+
+    cursor: pointer;
+    
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+        animation: pulsate 1s infinite
+    }
+}
+
+@keyframes pulsate {
+    // Set beginning and end to normal
+    0% {
+        transform: scaleY(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);    // offset-x | offset-y | blur-radius | color
+    }
+
+    100% {
+        transform: scaleY(1);
+        box-shadow: none;
     }
 }
