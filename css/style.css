@@ -146,6 +146,23 @@ Misc - opacity
     height: 3.75rem;
     border-radius: 50%; }
 
+.gallery {
+  /* Flex to set images side by side */
+  display: flex; }
+  .gallery__photo {
+    display: block;
+    width: 100%; }
+
+.overview {
+  /* Flex container for top-level Hotel Overview items */
+  display: flex; }
+  .overview__stars {
+    margin-right: auto; }
+  .overview__icon-star, .overview__icon-location {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: var(--color-primary); }
+
 .side-nav {
   margin-top: 3.5rem;
   font-size: 1.4rem;

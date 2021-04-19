@@ -1,0 +1,57 @@
+// || PHOTO GALLERY
+//--------------------------------------
+.gallery {
+    /* Flex to set images side by side */
+    display: flex;
+
+    &__photo {
+        display: block;     // Gets rid of white space below image if you leave as inline
+        width: 100%;
+    }
+}
+
+
+// || HOTEL OVERVIEW
+//--------------------------------------
+.overview {
+    /* Flex container for top-level Hotel Overview items */
+    display: flex;
+
+    &__heading {
+
+    }
+
+    &__stars {
+        // Flex item will grow to occupy available space but entire space is part of element
+        // So we use margin-right on auto to only occupy the space it needs
+        // You can also put margin-left auto on location element
+
+        // flex: 1;    
+        margin-right: auto;     
+        // background-color: yellow;   // Uncomment to test
+    }
+
+    &__icon-star,
+    &__icon-location {
+        height: 1.75rem;
+        width: 1.75rem;
+
+        fill: var(--color-primary);
+    }
+
+    &__location {
+        // background-color: green;    // Uncomment to test
+    }
+
+    &__rating {
+
+    }
+
+    &__rating-average {
+
+    }
+
+    &__rating-count {
+
+    }
+}
