@@ -52,8 +52,28 @@ Misc - opacity
 }
 
 .hotel-view {
-    // FOR TESTING
     flex: 1;
+
+    // FOR TESTING
     height: 80rem;
     // background-color: orangered;
+}
+
+.detail {
+    /* Flexbox to put .description and .user-reviews side by side */
+    display: flex;
+    padding: 4.5rem;
+}
+
+.description {
+    // Don't want it to grow or shrink. Usually set 0 0 if using %
+    flex: 0 0 60%;  
+    margin-right: 4.5rem;
+    
+    // background-color: orangered;
+}
+
+.user-reviews {
+    flex: 1;
+    // background-color: yellowgreen;
 }
