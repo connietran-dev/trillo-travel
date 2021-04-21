@@ -90,7 +90,7 @@
     &__rating-average {
         margin-bottom: -3px;    // Decrease space between elements for aesthetic
 
-        font-size: 2.25rem;
+        font-size: 2.5rem;
         font-weight: 300;
     }
 
@@ -106,7 +106,7 @@
 // This is a new component since we use this for location and "Show all" link
 
 .btn-inline {
-    display: inline-block; 
+    display: inline-block;
     padding-bottom: 2px;
 
     color: var(--color-primary);
@@ -231,5 +231,81 @@
         &:not(:last-child) {
             margin-right: -1.5rem;
         }
+    }
+}
+
+
+
+// || REVIEWS
+//--------------------------------------
+
+.review {
+    position: relative;
+
+    margin-bottom: 3.5rem;
+    padding: 3rem;
+
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+
+    overflow: hidden;   // Hide overflow of quotation mark
+
+    // Create pseudoelement for quotation mark
+    &::before {
+        content: "\201C";    // Use ISOnum for CSS instead of HTML &ldquo;
+
+        z-index: 1;     // Put behind .text z-index of 10
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+
+        color: var(--color-grey-light-2);
+        font-family: sans-serif;    // Override default inherit of serif font
+        font-size: 21rem;
+        line-height: 1;     // Decrease line-height
+    }
+
+    &__text {
+        z-index: 10;    // Put in front of quotation mark z-index of 1
+        position: relative;     // Have to set position of element for it to have z-index
+
+        margin-bottom: 2rem;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        margin-right: 1.5rem;
+        
+        height: 4.5rem;
+        width: 4.5rem;
+
+        border-radius: 50%;
+    }
+
+    &__user-box {
+        margin-right: auto;     // Push rating to right
+    }
+
+    &__user-name {
+        margin-bottom: .4rem;
+
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__user-date {
+        color: var(--color-grey-dark-3);
+        font-size: 1rem;
+    }
+
+    &__rating {
+        color: var(--color-primary);
+        font-size: 2.4rem;
+        font-weight: 300;
     }
 }
