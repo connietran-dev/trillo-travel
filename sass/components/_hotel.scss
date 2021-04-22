@@ -320,3 +320,76 @@
         font-weight: 300;
     }
 }
+
+
+
+// || CALL TO ACTION
+//--------------------------------------
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        margin-bottom: 2.5rem;
+
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;   // "Only 4 rooms left" is overflowing the .btn
+
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    border: none;
+    border-radius: 100px;
+
+    // Select all child elements
+    & > * {
+        display: inline-block;  // Originally inline but we want to use padding
+        height: 100%;   // Give height and width of parent to element
+        width: 100%;
+        transition: all .2s;    // Note transition doesn't work on background-image
+    }
+
+    // "Book now" button
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    // "Only 4 rooms left"
+    &__invisible {
+        position: absolute;
+        left: 0;
+        top: -100%;     // Move up exactly the size of the element
+
+        padding: 2rem 0;    // Don't wrap text
+        
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    // When we hover over the button...
+    &:hover &__visible {
+        transform: translateY(100%);    // Translate it down
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
