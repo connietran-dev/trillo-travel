@@ -81,4 +81,9 @@ Misc - opacity
 
 .user-reviews {
     flex: 1;
+
+    /* Create flex contaimer for containers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

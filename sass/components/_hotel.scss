@@ -120,8 +120,19 @@
     
     transition: all .2s;
 
+    & span {
+        margin-left: 3px;   // Using px since they're so small
+
+        transition: margin-left .5s;    // Use margin-left instead of all b/c span color is not changing correctly on hover
+    }
+
     &:hover {
         color: var(--color-grey-dark-1);
+
+        // When parent element is hovered, increase margin-left of arrow
+        span {
+            margin-left: 8px;
+        }
     }
 
     &:focus {
