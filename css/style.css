@@ -169,6 +169,10 @@ Misc - opacity
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__heading {
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem; } }
   .overview__stars {
     margin-right: auto;
     display: flex; }
@@ -193,13 +197,22 @@ Misc - opacity
     padding: 0 2.25rem;
     color: #fff;
     background-color: var(--color-primary); }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating {
+        padding: 0 1.5rem; } }
   .overview__rating-average {
     margin-bottom: -3px;
     font-size: 2.5rem;
     font-weight: 300; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating-average {
+        font-size: 1.8rem; } }
   .overview__rating-count {
     font-size: .8rem;
     text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating-count {
+        font-size: .5rem; } }
 
 .btn-inline {
   display: inline-block;
@@ -418,11 +431,21 @@ Misc - opacity
       .side-nav__link:link, .side-nav__link:visited {
         justify-content: center;
         padding: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column;
+        padding: 1.5rem; } }
   .side-nav__icon {
     margin-right: 2rem;
     height: 1.75rem;
     width: 1.75rem;
     fill: currentColor; }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__icon {
+        margin-right: 0;
+        margin-bottom: .7rem;
+        height: 1.5rem;
+        width: 1.5rem; } }
 
 .legal {
   padding: 2.5rem;
@@ -500,6 +523,9 @@ Misc - opacity
   @media only screen and (max-width: 56.25em) {
     .detail {
       padding: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .detail {
+      flex-direction: column; } }
 
 /* Hotel Description box */
 .description {
@@ -512,6 +538,10 @@ Misc - opacity
     .description {
       margin-right: 3rem;
       padding: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .description {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   flex: 1;

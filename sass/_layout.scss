@@ -88,6 +88,11 @@ Misc - opacity
     @media only screen and (max-width: $breakpoint-medium) {
         padding: 3rem; // Decrease padding to increase space
     }
+
+    // Remember to put smaller breakpoint so that both apply at small
+    @media only screen and (max-width: $breakpoint-small) {
+        flex-direction: column; // Change boxes to stack on small
+    }
 }
 
 /* Hotel Description box */
@@ -103,6 +108,11 @@ Misc - opacity
     @media only screen and (max-width: $breakpoint-medium) {
         margin-right: 3rem;
         padding: 2rem; // Decrease padding to increase space
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
     }
 }
 

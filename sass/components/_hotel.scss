@@ -27,6 +27,11 @@
         font-weight: 300;
         letter-spacing: 1px;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;  // Decrease heading height
+        }
     }
 
     &__stars {
@@ -85,6 +90,10 @@
 
         color: #fff;
         background-color: var(--color-primary);
+
+        @media only screen and (max-width: $breakpoint-small) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average {
@@ -92,11 +101,19 @@
 
         font-size: 2.5rem;
         font-weight: 300;
+
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $breakpoint-small) {
+            font-size: .5rem;
+        }
     }
 }
 
