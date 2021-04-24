@@ -18,6 +18,16 @@ Misc - opacity
 
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
+
+    // 1200px
+    @media only screen and (max-width: $breakpoint-largest) {
+        margin: 0;  // Remove pink border
+
+        // In _base.scss, we decreased font-size to 8px (50%), which then changes our .container's max-width above at this breakpoint or smaller
+        // because 120rem because 120*8=960px instead of 1200px, making a space to the right
+        max-width: 100%;    // Fix pink space to right
+        width: 100%;    // Just be 100% sure :)
+    }
 }
 
 .header {
@@ -36,11 +46,16 @@ Misc - opacity
 }
 
 .content {
+    /* Create flex container for .sidebar and .hotel-view */
     display: flex;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        flex-direction: column; // At 900px, put .sidebar on top of .hotel-view
+    }
 }
 
 .sidebar {
-    /* Flex with hotel-view */
+    /* Flex with .hotel-view */
     flex: 0 0 18%;  // Shorthand for flex property - flex-grow (0), flex-shrink (0), flex-basis (18%)
     
     /* Flexbox container for menu items */
@@ -52,12 +67,14 @@ Misc - opacity
 }
 
 .hotel-view {
+    /* Flex with .side-bar */
     flex: 1;
 
     // FOR TESTING
     // background-color: orangered;
 }
 
+/* Overall Hotel Details container */
 .detail {
     /* Flexbox to put .description and .user-reviews side by side */
     display: flex;
@@ -67,16 +84,26 @@ Misc - opacity
 
     background-color: var(--color-grey-light-2);
     border-bottom: var(--line);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: 3rem; // Decrease padding to increase space
+    }
 }
 
+/* Hotel Description box */
 .description {
     // Don't want it to grow or shrink. Usually set 0 0 if using %
     flex: 0 0 60%;  
-    margin-right: 4.5rem;
+    margin-right: 4.5rem;   // Create space between boxes
     padding: 3rem;
     
     background-color: #fff;
     box-shadow: var(--shadow-light);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        margin-right: 3rem;
+        padding: 2rem; // Decrease padding to increase space
+    }
 }
 
 .user-reviews {

@@ -6,12 +6,25 @@
     font-size: 1.4rem;
     list-style: none;
 
+    @media only screen and (max-width: $breakpoint-medium) {
+        display: flex; // At 900px, put nav items next to each other
+        margin: 0;
+    }
+
     &__item {
         position: relative;
 
         // Everything but last-child
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $breakpoint-medium) {
+                margin-bottom: 0;
+            }
+        }
+
+        @media only screen and (max-width: $breakpoint-medium) {
+            flex: 1;   // Occupy the same space
         }
     }
 
@@ -74,6 +87,11 @@
         
         display: flex;  // TODO - Figure out why you have to put this at bottom
         align-items: center;    // Align nav icon and link
+
+        @media only screen and (max-width: $breakpoint-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
     }
 
     &__icon {
@@ -99,5 +117,9 @@
     a {
         color: var(--color-primary-dark);
         text-decoration: none;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        display: none;  // Hide legal text
     }
 }

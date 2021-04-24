@@ -37,6 +37,14 @@ Grey dark 3: #999;
 }
 
 
+// For our media queries, we are going with the "perfect" method of only adjust where the design breaks
+// You cannot put CSS Variables in media queries, so we use Sass variables instead
+
+$breakpoint-largest: 75rem; // 1200px / 16px
+$breakpoint-large: 68.75em; // 1100px / 16px
+$breakpoint-medium: 56.25em; // 900px / 16px
+
+
 // GLOBAL RESETS
 
 * {
@@ -55,7 +63,11 @@ Grey dark 3: #999;
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; // 1rem = 10px border defaul, 10px/16px = 62.5%
+    font-size: 62.5%; // We've decreased1rem = 10px, 10px/16px = 62.5%
+
+    @media only screen and (max-width: $breakpoint-large) {
+        font-size: 50%; // Decrease font-size at 1100px since components start wrapping
+    }
 }
 
 
