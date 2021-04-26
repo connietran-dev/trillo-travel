@@ -7,7 +7,6 @@
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
     "dev": "npm-run-all --parallel devserver watch:sass",
-
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
@@ -17,7 +16,6 @@
     "watch:sass": "For dev, actively compiles scss into css files with -watch flag",
     "devserver": "live-serves static html file",
     "dev": "For dev, concurrently compiles css and live-serves static html file",
-
     "compile:sass": "For build, compiles scss into css files, one time for build",
     "prefix:css": "Prefixes CSS in style.concat.css file",
     "compress:css": "Compresses style.prefix.css file into style.css file",

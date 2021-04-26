@@ -32,6 +32,10 @@
             font-size: 1.8rem;
             padding: 1.25rem 2rem;  // Decrease heading height
         }
+
+        @media only screen and (max-width: $breakpoint-smallest) {
+            padding: 1.25rem 1rem;
+        }
     }
 
     &__stars {
@@ -46,15 +50,28 @@
         // svg's behave like inline elements like text which produces small whitespace underneath
         // So set their parent element to flexbox to get rid of whitespace
         display: flex;
-
     }
 
     &__icon-star,
     &__icon-location {
         height: 2rem;
         width: 2rem;
-
         fill: var(--color-primary);
+    }
+
+    &__icon-star {
+        @media only screen and (max-width: $breakpoint-smallest) {
+            height: 1.75rem;
+            width: 1.75rem;   
+        }
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
+
+        @media only screen and (max-width: $breakpoint-smallest) {
+            margin-right: 0;      
+        }
     }
 
     &__location {
@@ -69,10 +86,10 @@
         // align-items: center;
     
         font-size: 1.2rem;
-    }
 
-    &__icon-location {
-        margin-right: .5rem;
+        @media only screen and (max-width: $breakpoint-smallest) {
+            font-size: 1rem;
+        }
     }
 
     &__rating {
@@ -105,6 +122,10 @@
         @media only screen and (max-width: $breakpoint-small) {
             font-size: 1.8rem;
         }
+
+        @media only screen and (max-width: $breakpoint-smallest) {
+            font-size: 2.25rem;
+        }
     }
 
     &__rating-count {
@@ -113,6 +134,10 @@
 
         @media only screen and (max-width: $breakpoint-small) {
             font-size: .5rem;
+        }
+
+        @media only screen and (max-width: $breakpoint-smallest) {
+            display: none; // Hide rating count on mobile
         }
     }
 }

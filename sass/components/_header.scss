@@ -16,6 +16,10 @@ Misc - opacity
 .logo {
     margin-left: 2rem;
     height: 3.25rem;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+        height: 3rem;
+    }
 }
 
 
@@ -39,8 +43,8 @@ Misc - opacity
         // Width of element should be 100%, shouldn't grow or shrink
         flex: 0 0 100%; 
 
-        background-color: var(--color-grey-light-2);
-        // Put bg color on entire search instead of only input
+        margin-top: 1rem;
+        background-color: var(--color-grey-light-2); // Put bg color on entire search instead of only input
     }
 
     &__input {
@@ -59,14 +63,17 @@ Misc - opacity
 
         transition: all .2s .1s;
 
+        @media only screen and (max-width: $breakpoint-smallest) {
+            padding: .9rem 1rem;
+        }
+
         &:focus {
             width: 100%;    // Increase width on focus 
-
             background-color: var(--color-grey-light-3);
-            
             outline: none;  // Remove default browser outline
         }
 
+        // Input placeholder text
         // This only works in Chrome & Safari right now
         &::-webkit-input-placeholder {
             color: var(--color-grey-dark-3);
@@ -136,14 +143,12 @@ Misc - opacity
 
     &__icon-box {
         position: relative;
-
         margin-top: 1rem;
     }
     
     &__icon {        
         height: 2.25rem;
         width: 2.25rem;
-
         fill: var(--color-grey-dark-2);
     }
 

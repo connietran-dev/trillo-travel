@@ -48,7 +48,7 @@ Misc - opacity
         flex-wrap: wrap;    // Wrap items to next line if there's not enough space
         
         // align-content controls alignment of rows within flex container
-        align-content: space-around;  
+        align-content: center;  // Center content on mobile and add margin-top to search
 
         height: 11rem;
 
