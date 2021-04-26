@@ -32,6 +32,17 @@ Misc - opacity
 
     // background-color: orangered;  // Used for visual development only
 
+    @media only screen and (max-width: $breakpoint-smallest) {
+        order: 1;   // By default, elements are order: 0, so we make search last
+        
+        // Make search bar full width
+        // Width of element should be 100%, shouldn't grow or shrink
+        flex: 0 0 100%; 
+
+        background-color: var(--color-grey-light-2);
+        // Put bg color on entire search instead of only input
+    }
+
     &__input {
         margin-right: -3.25rem;  // This moves search icon on top of input
         padding: .7rem 2rem;

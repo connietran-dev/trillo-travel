@@ -75,6 +75,11 @@ Misc - opacity
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media only screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2); } }
   .search__input {
     margin-right: -3.25rem;
     padding: .7rem 2rem;
@@ -491,6 +496,11 @@ Misc - opacity
   font-size: 1.4rem;
   border-bottom: var(--line);
   background-color: #fff; }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      align-content: space-around;
+      height: 11rem; } }
 
 .content {
   /* Create flex container for .sidebar and .hotel-view */

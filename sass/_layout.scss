@@ -43,6 +43,16 @@ Misc - opacity
     border-bottom: var(--line);
     
     background-color: #fff;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+        flex-wrap: wrap;    // Wrap items to next line if there's not enough space
+        
+        // align-content controls alignment of rows within flex container
+        align-content: space-around;  
+
+        height: 11rem;
+
+    }
 }
 
 .content {
