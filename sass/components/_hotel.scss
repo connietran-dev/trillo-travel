@@ -217,18 +217,21 @@
         margin-right: .7rem;
         
         // This is the method for older browsers
-        // background-image: url(../img/chevron-thin-right.svg);
-        // background-size: cover;
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
 
         // For new browsers, use masks which is the best approach
         // Masks define an area where we can look through an area
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;   // Icon will cover entire element
-
-        // Add these in case browsers support this in the future        
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;   // Icon will cover entire element
+        @supports(-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;   // Icon will cover entire element
+    
+            // Add these in case browsers support this in the future        
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;   // Icon will cover entire element
+            background-image: none; // Fixes so that there is no black when using @supports
+        }
     }
 }
 
